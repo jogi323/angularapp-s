@@ -1,0 +1,45 @@
+<div class="main-content container-fluid">
+  <div class="row">
+    <div class="add-labels col-md-4">
+      <div class="container">
+        <div class="inner-form">
+          <h3>ADD</h3>
+          <form name="labelForm" #labelForm='ngForm'>
+            <div class="form-group">
+              <label>Label</label>
+              <input type="text" name="label" class="form-control" [(ngModel)]="data.label" required>
+            </div>
+            <div class="form-group">
+              <label>Value</label>
+              <input type="text" name="value" class="form-control" [(ngModel)]="data.value" required>
+            </div>
+            <button type="submit" class="btn btn-default" (click)="addLabel();labelForm.reset()" [disabled]="labelForm.form.invalid">
+              <span>Submit</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="all-labels labels-list col-md-8" *ngIf="labels.length">
+      <div class="container">
+        <div class="inner-form">
+          <h3 class="text-center">LIST</h3>
+          <div *ngFor="let label of labels">
+            <div class="container card-content">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">Label:
+                    <span class="result">{{label.label}}</span>
+                  </h6>
+                  <h6 class="card-title">Value:
+                    <span class="result">{{label.value}}</span>
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
