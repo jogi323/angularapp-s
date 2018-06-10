@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from "../../../api.service";
 
 @Component({
   selector: 'app-forgot-password',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class ForgotPasswordComponent implements OnInit {
   private fpData:fpFormData;
 
-  constructor(private router:Router) { 
+  constructor(private router:Router,private api: ApiService) { 
     this.fpData = {
       email: '',
       password: '',
@@ -18,6 +19,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.api.shareDataBWComponents);
   }
 
   resetPassword(data){

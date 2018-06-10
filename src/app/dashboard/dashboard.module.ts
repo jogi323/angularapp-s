@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
@@ -13,7 +14,8 @@ import { MainComponent } from './components/main/main.component';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [
     DashboardComponent,

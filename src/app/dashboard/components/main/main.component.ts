@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -7,16 +7,25 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  @Input() Data: object;
   private data: LabelFormData;
+  private dummyData: object;
+  @Output() shareInfo = new EventEmitter<any>()
   private labels: any[] = [];
   constructor() {
     this.data = {
       label: '',
       value:''
+    };
+    console.log(this.Data);
+    this.dummyData = {
+      name:"PC333"
     }
    }
 
   ngOnInit() {
+    console.log(this.data);
+    this.shareInfo.emit(this.dummyData);
   }
   addLabel(data){
     let obj = {
@@ -25,6 +34,13 @@ export class MainComponent implements OnInit {
     }
     this.labels.push(obj);
     console.log(this.labels);
+  }
+
+  testViewChild() {
+    console.log("this method was triggered.");
+  };
+  shareData() {
+
   }
 }
 

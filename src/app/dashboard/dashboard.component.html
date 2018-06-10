@@ -1,9 +1,18 @@
 <div class="header">
-    <app-header></app-header>
+    <app-header #localVariable></app-header>
 </div>
 <div class="main-section">
-    <app-main></app-main>
+    <app-main [Data]="dummyData" (shareInfo)="newInfo($event)"></app-main><pre>{{dummyData}}</pre>
 </div>
-<div class="footer">
-    <app-footer></app-footer>
+<div class="footer" >
+    <app-footer *ngFor="let j of jokes" [joke]="j" ></app-footer>
 </div>
+<button type="button"
+        class="btn btn-success"
+        (click)="addJoke()">Add Joke
+</button>
+  <button type="button"
+        class="btn btn-danger"
+        (click)="deleteJoke()">Clear Jokes
+</button>
+<button (click)="localVariable.getData();localVariable.printHi()">Print hello</button>

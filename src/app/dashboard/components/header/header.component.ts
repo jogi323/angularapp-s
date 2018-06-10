@@ -17,5 +17,11 @@ export class HeaderComponent implements OnInit {
   logout(){
     this.router.navigate(['/']);
   }
+  getData() {
+    console.log("hello");
+  };
 
+  printHi(){
+    console.log("HI");
+  }
 }

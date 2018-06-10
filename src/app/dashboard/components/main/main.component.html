@@ -3,7 +3,7 @@
     <div class="add-labels col-md-4">
       <div class="container">
         <div class="inner-form">
-          <h3>ADD</h3>
+          <h3>ADD{{Data.name}}</h3>
           <form name="labelForm" #labelForm='ngForm'>
             <div class="form-group">
               <label>Label</label>
@@ -43,3 +43,4 @@
     </div>
   </div>
 </div>
+<button class="btn btn-primary" (click)="shareData()">Click</button>
